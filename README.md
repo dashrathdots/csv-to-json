@@ -11,15 +11,16 @@ Clone the entire repository on your local machine using the command
 ```
 git clone https://github.com/dashrathdots/csv-to-json.git
 
-git checkout -b Intermediate
 
-git pull origin Intermediate
-```
 Say the above is cloned out in a folder say `csv-to-json`.
 Execute the following command to go in the checked out project folder
 ```
 cd csv-to-json
 ```
+
+Checkout to the Intermediate branch
+
+git checkout Intermediate
 
 After the above, open the `csv-to-json` folder in any IDE of your choice (preferable to use Visual Studio Code).
 It has one folder
@@ -60,7 +61,15 @@ It has one folder
 
   ```
 
-  ## Run Unit Test Case inside the docker
-  sudo  docker-compose -f docker-compose.yml exec csvtojson python manage.py test csvapp.tests.ConvertCsvToJsonTestCase.create_tree
+## Web access
+- Hit the below url and upload the csv file to convert nested json .
+```
+http://127.0.0.1:8000/upload/csv
+
+Once you upload the file, system will parse it and JSON file will be downloaded automatically in your browser
+```
+
+## Run Unit Test Case inside the docker
+sudo  docker-compose -f docker-compose.yml exec csvtojson python manage.py test csvapp.tests.ConvertCsvToJsonTestCase.create_tree
 
 
